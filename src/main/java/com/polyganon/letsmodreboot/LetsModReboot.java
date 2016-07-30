@@ -1,5 +1,6 @@
 package com.polyganon.letsmodreboot;
 
+import com.polyganon.letsmodreboot.config.ConfigurationHandler;
 import com.polyganon.letsmodreboot.proxy.IProxy;
 import com.polyganon.letsmodreboot.reference.Reference;
 import net.minecraftforge.fml.common.Mod;
@@ -18,20 +19,20 @@ public class LetsModReboot {
     public static IProxy proxy;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event)
+    public void preInit(FMLPreInitializationEvent event) // Network handling, Mod configuration, Initialise items and Blocks
     {
-        // Network handling, Mod configuration, Initialise items and Blocks
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event)
+    public void init(FMLInitializationEvent event) // Register GUIs, Tile Entities, Crafting Recipes, further event handlers
     {
-        // Register GUIs, Tile Entities, Crafting Recipes, further event handlers
+
     }
 
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event)
+    public void postInit(FMLPostInitializationEvent event) // Wrapup anything for after other mods have initialised.
     {
-        // Wrapup anything for after other mods have initialised.
+
     }
 }

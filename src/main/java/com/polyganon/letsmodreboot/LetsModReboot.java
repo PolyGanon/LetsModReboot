@@ -1,6 +1,8 @@
 package com.polyganon.letsmodreboot;
 
+import com.polyganon.letsmodreboot.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -10,6 +12,9 @@ public class LetsModReboot {
 
     @Mod.Instance("LetsModReboot")
     public static LetsModReboot instance;
+
+    @SidedProxy(clientSide = "com.polyganon.letsmodreboot.proxy.ClientProxy",serverSide = "com.polyganon.letsmodreboot.proxy.ServerProxy")
+    public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)

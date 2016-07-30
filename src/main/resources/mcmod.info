@@ -1,19 +1,15 @@
-[
-{
-"modid": "letsmodreboot",
-"name": "Lets Mod Reboot",
-"description": "An attempt to follow Pahimar's Lets Mod Reboot series.",
-"version": "1.0",
-"credits": "Pahimar",
-"logoFile": "",
-"mcversion": "1.10.2",
-"url": "",
-"updateUrl": "",
-"authors": [ "PolyGanon" ],
-"parent":"",
-"screenshots": [],
-"dependencies": [
-"mod_MinecraftForge"
-]
-}
-]
+[{
+    "modid": "LetsModReboot",
+    "name": "Lets Mod Reboot",
+    "description": "Following Pahimar's Lets Mod Reboot Series",
+    "version": "1.10.2 - 1.0",
+    "mcversion": "1.10.2",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["PolyGanon"],
+    "credits": "Pahimar",
+    "logoFile": "",
+    "screenshots": [],
+    "parent":"",
+    "dependencies": []
+}]

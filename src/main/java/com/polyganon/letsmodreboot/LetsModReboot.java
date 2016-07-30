@@ -1,19 +1,20 @@
 package com.polyganon.letsmodreboot;
 
 import com.polyganon.letsmodreboot.proxy.IProxy;
+import com.polyganon.letsmodreboot.reference.Reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid="LetsModReboot" , name="Lets Mod Reboot" , version="1.10.2-1.0")
+@Mod(modid= Reference.MOD_ID, name= Reference.MOD_NAME , version= Reference.VERSION)
 public class LetsModReboot {
 
-    @Mod.Instance("LetsModReboot")
+    @Mod.Instance(Reference.MOD_ID)
     public static LetsModReboot instance;
 
-    @SidedProxy(clientSide = "com.polyganon.letsmodreboot.proxy.ClientProxy",serverSide = "com.polyganon.letsmodreboot.proxy.ServerProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS,serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
     @Mod.EventHandler

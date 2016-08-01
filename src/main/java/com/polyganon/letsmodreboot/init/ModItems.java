@@ -6,7 +6,6 @@ import com.polyganon.letsmodreboot.reference.Reference;
 import com.polyganon.letsmodreboot.utility.RegHelper;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
 
@@ -20,9 +19,7 @@ public class ModItems {
 
     public static void register()
     {
-        RegHelper.register(mapleLeaf, "mapleLeaf", "mapleLeaf");
-
-        //GameRegistry.registerItem(mapleLeaf, mapleLeaf.getUnlocalizedName().substring(mapleLeaf.getUnlocalizedName().indexOf(".")+1));
+        RegHelper.register(mapleLeaf, "mapleLeaf", mapleLeaf.getUnlocalizedName());
     }
 
 
@@ -33,10 +30,6 @@ public class ModItems {
     public static void registerRender(ItemLMR item)
     {
         ModelLoader.setCustomModelResourceLocation
-                (item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(item.getUnlocalizedName().indexOf(".") + 1), "inventory"));
-
-        /*Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register
-                (item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(item.getUnlocalizedName().indexOf(".") + 1), "inventory"));
-        */
+                (item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + item.getUnlocalizedName(), "inventory"));
     }
 }

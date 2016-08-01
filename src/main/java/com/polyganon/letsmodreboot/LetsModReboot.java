@@ -1,6 +1,7 @@
 package com.polyganon.letsmodreboot;
 
 import com.polyganon.letsmodreboot.handler.ConfigurationHandler;
+import com.polyganon.letsmodreboot.init.ModItems;
 import com.polyganon.letsmodreboot.proxy.IProxy;
 import com.polyganon.letsmodreboot.reference.Reference;
 import com.polyganon.letsmodreboot.utility.LogHelper;
@@ -24,18 +25,23 @@ public class LetsModReboot {
     public void preInit(FMLPreInitializationEvent event) // Network handling, Mod configuration, Initialise items and Blocks
     {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        ModItems.init();
+        ModItems.register();
         LogHelper.info("PreInit Complete!");
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) // Register GUIs, Tile Entities, Crafting Recipes, further event handlers
     {
+        proxy.registerRenders();
+        //ModItems.registerRenders();
         LogHelper.info("Init Complete!");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) // Wrapup anything for after other mods have initialised.
     {
+
         LogHelper.info("PostInit Complete!");
     }
 }
